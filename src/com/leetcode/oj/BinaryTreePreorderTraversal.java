@@ -2,10 +2,7 @@ package com.leetcode.oj;
 
 import com.leetcode.oj.beans.TreeNode;
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Deque;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by doliu on 8/12/14.
@@ -25,7 +22,7 @@ public class BinaryTreePreorderTraversal {
 		preorderTraversal(root.right, result);
 	}
 
-	public List<Integer> preorderTraversalIterative(TreeNode root) {
+	public List<Integer> preorderTraversalIterativeFromLeetCode(TreeNode root) {
 		if (root == null) return new ArrayList<>();
 		List<Integer> result = new ArrayList<>();
 		Deque<TreeNode> stack = new ArrayDeque<>();
@@ -39,6 +36,21 @@ public class BinaryTreePreorderTraversal {
 				node = stack.pop();
 				if (node != null) node = node.right;
 			}
+		}
+		return result;
+	}
+
+	public List<Integer> preorderTraversalIterativeFromWiki(TreeNode root) {
+		if (root == null) return Collections.emptyList();
+		List<Integer> result = new ArrayList<>();
+		Deque<TreeNode> stack = new ArrayDeque<>();
+		TreeNode cur = root;
+		while (cur != null) {
+			result.add(cur.val);
+			if (cur.right != null) stack.push(cur.right);
+			if (cur.left != null) stack.push(cur.left);
+			if (stack.isEmpty()) cur = null;
+			else cur = stack.pop();
 		}
 		return result;
 	}

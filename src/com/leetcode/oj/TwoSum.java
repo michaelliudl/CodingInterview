@@ -1,6 +1,8 @@
 package com.leetcode.oj;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by doliu on 5/7/14.
@@ -10,35 +12,20 @@ public class TwoSum {
 		if (numbers == null || numbers.length <= 1) {
 			return null;
 		}
-		int[] numbersDup = new int[numbers.length];
-		System.arraycopy(numbers, 0, numbersDup, 0, numbersDup.length);
-		Arrays.sort(numbers);
-		int start = 0, end = numbers.length - 1;
-		while(start < end) {
-			int first = numbers[start], second = numbers[end];
-			if (first + second == target) {
-				int originalStart = 0, originalEnd = 0;
-				for (int i = 0; i < numbersDup.length; i++) {
-					if (numbersDup[i] == first) {
-						originalStart = i;
-					}
-					if (numbersDup[i] == second) {
-						originalEnd = i;
-					}
-				}
-				return new int[] {originalStart + 1, originalEnd + 1};
-			}
-			int diff = target - first;
-			if (second > diff) {
-				end--;
-			} else {
-				start++;
+		Map<Integer, Integer> numToIndex = new HashMap<>();
+		for (int i = 0; i < numbers.length; i++) {
+			numToIndex.put(numbers[i], i);
+		}
+		for (int i = 0; i < numbers.length; i++) {
+			int diff = target - numbers[i];
+			if (numToIndex.get(diff) != null && i != numToIndex.get(diff)) {
+				return new int[] {i + 1, numToIndex.get(diff) + 1};
 			}
 		}
 		return null;
 	}
 
-	public int[] twoSum_1(int[] numbers, int target) {
+	public int[] twoSumBrute(int[] numbers, int target) {
 		if (numbers == null || numbers.length <= 1) {
 			return null;
 		}

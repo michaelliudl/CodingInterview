@@ -21,7 +21,7 @@ public class SingleNumber {
 		return temp.iterator().next();
 	}
 
-	public int singleNumberNoExtraMemory(int[] A) {
+	public int singleNumberSort(int[] A) {
 		if (A == null) return Integer.MIN_VALUE;
 		Arrays.sort(A);
 		for (int i = 0, n = A.length; i < n; i += 2) {
@@ -31,5 +31,14 @@ public class SingleNumber {
 			}
 		}
 		return Integer.MIN_VALUE;
+	}
+
+	public int singleNumberXor(int[] A) {
+		if (A == null) return Integer.MIN_VALUE;
+		int result = 0;
+		for (int x : A) {
+			result ^= x;
+		}
+		return result;
 	}
 }
