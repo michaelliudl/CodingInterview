@@ -9,7 +9,7 @@ import java.util.List;
  */
 public class MergeKSortedLists {
 	public ListNode mergeKLists(List<ListNode> lists) {
-		if (lists == null) return null;
+		if (lists == null || lists.size() == 0) return null;
 		if (lists.size() == 1) return lists.get(0);
 		ListNode p = lists.get(0);
 		for (int i = 1; i < lists.size(); i++) {
