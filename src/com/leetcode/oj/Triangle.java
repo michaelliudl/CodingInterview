@@ -18,4 +18,21 @@ public class Triangle {
 		}
 		return triangle.get(0).get(0);
 	}
+
+	public int minimumTotalDP(List<List<Integer>> triangle) {
+		int n = triangle.size(), max = triangle.get(n - 1).size();
+		int[] sum = new int[max];
+		for (int i = n - 1; i >= 0; i--) {
+			int len = triangle.get(i).size();
+			for (int j = 0; j < len; j++) {
+				if (i == n - 1)
+					sum[j] = triangle.get(i).get(j);
+				else {
+					int cur = triangle.get(i).get(j);
+					sum[j] = cur + Math.min(triangle.get(i + 1).get(j), triangle.get(i + 1).get(j + 1));
+				}
+			}
+		}
+		return sum[0];
+	}
 }

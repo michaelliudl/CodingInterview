@@ -3,7 +3,7 @@ package com.leetcode.oj;
 /**
  * Created by doliu on 5/7/14.
  */
-public class SearchInertPosition {
+public class SearchInsertPosition {
 	public int searchInsert(int[] A, int target) {
 		if (A == null) return -1;
 		if (A.length == 0 || target <= A[0]) return 0;

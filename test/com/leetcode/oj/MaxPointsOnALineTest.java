@@ -13,15 +13,11 @@ public class MaxPointsOnALineTest {
 	@Test
 	public void testMaxPoints() {
 		MaxPointsOnALine max = new MaxPointsOnALine();
-		int n = max.maxPoints(new Point[] {new Point(84, 250),
-				new Point(0, 0),
-				new Point(1, 0),
-				new Point(0, -70),
-				new Point(1, -1),
-				new Point(21, 10),
-				new Point(42, 90),
-				new Point(-42, -230),
+		int n = max.maxPointsPointOriented(new Point[] {new Point(1, 1),
+				new Point(1, 1),
+				new Point(2, 2),
+				new Point(2, 2),
 		});
-		Assert.assertEquals(6, n);
+		Assert.assertEquals(3, n);
 	}
 }
