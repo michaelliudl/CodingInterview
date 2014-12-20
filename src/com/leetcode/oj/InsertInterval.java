@@ -1,8 +1,7 @@
 package com.leetcode.oj;
 
-import com.leetcode.oj.beans.Interval;
+import beans.Interval;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 

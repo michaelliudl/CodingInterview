@@ -1,4 +1,4 @@
-package com.leetcode.oj.beans;
+package beans;
 
 import java.util.ArrayList;
 import java.util.List;

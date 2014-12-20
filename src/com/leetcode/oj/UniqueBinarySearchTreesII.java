@@ -1,10 +1,9 @@
 package com.leetcode.oj;
 
-import com.leetcode.oj.beans.TreeNode;
+import beans.TreeNode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 /**

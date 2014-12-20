@@ -1,6 +1,6 @@
 package com.leetcode.oj;
 
-import com.leetcode.oj.beans.RandomListNode;
+import beans.RandomListNode;
 
 /**
  * Created by doliu on 8/29/14.

@@ -1,6 +1,6 @@
 package com.leetcode.oj;
 
-import com.leetcode.oj.beans.ListNode;
+import beans.ListNode;
 import org.junit.Assert;
 import org.junit.Test;
 

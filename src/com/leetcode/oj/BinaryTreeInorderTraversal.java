@@ -1,6 +1,6 @@
 package com.leetcode.oj;
 
-import com.leetcode.oj.beans.TreeNode;
+import beans.TreeNode;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;

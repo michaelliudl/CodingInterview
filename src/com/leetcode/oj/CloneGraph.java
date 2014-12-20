@@ -1,6 +1,6 @@
 package com.leetcode.oj;
 
-import com.leetcode.oj.beans.UndirectedGraphNode;
+import beans.UndirectedGraphNode;
 
 import java.util.ArrayDeque;
 import java.util.Deque;

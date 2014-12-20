@@ -1,6 +1,6 @@
 package com.leetcode.oj;
 
-import com.leetcode.oj.beans.ListNode;
+import beans.ListNode;
 
 /**
  * Created by doliu on 9/2/14.

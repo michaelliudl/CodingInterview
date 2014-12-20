@@ -1,4 +1,4 @@
-package com.leetcode.oj.beans;
+package beans;
 
 /**
  * Created by doliu on 6/12/14.

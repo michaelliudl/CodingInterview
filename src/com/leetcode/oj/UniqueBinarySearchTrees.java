@@ -4,9 +4,10 @@ package com.leetcode.oj;
  * Created by doliu on 8/20/14.
  */
 public class UniqueBinarySearchTrees {
-	/*
-	f(i)=sum(f(k-1)*f(i-k)) where 2<=i<=n, 1<=k<=i
-	DP
+	/**
+	 * Catalan number
+	 * f(i)=sum(f(k-1)*f(i-k)) where 2<=i<=n, 1<=k<=i
+	 * DP
 	 */
 	public int numTrees(int n) {
 		int[] values = new int[n + 1];

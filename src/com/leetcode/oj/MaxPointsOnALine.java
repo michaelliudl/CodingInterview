@@ -1,11 +1,9 @@
 package com.leetcode.oj;
 
-import com.leetcode.oj.beans.Point;
+import beans.Point;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 
 /**
  * Created by doliu on 9/4/14.

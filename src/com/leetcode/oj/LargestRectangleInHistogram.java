@@ -31,6 +31,25 @@ public class LargestRectangleInHistogram {
 		return max;
 	}
 
+	public int largestRectangleAreaOnePass(int[] height) {
+		if (height == null || height.length == 0) return 0;
+		int[] h = new int[height.length + 1];
+		System.arraycopy(height, 0, h, 0, height.length);
+		h[height.length] = 0;
+		int max = 0;
+		Deque<Integer> stack = new ArrayDeque<>();
+		for (int i = 0; i < h.length; i++) {
+			if (stack.isEmpty() || h[stack.peek()] <= h[i])
+				stack.push(i);
+			else {
+				int cur = stack.pop();
+				max = Math.max(max, h[cur] * (stack.isEmpty() ? i : (i - stack.peek() - 1)));
+				i--; // keep end index at current position while popping until stack top is less than current value
+			}
+		}
+		return max;
+	}
+
 	public int largestRectangleAreaVBrute(int[] height) {
 		if (height == null || height.length == 0) return 0;
 		int max = 0, n = height.length;

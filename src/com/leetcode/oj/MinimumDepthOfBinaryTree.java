@@ -1,6 +1,6 @@
 package com.leetcode.oj;
 
-import com.leetcode.oj.beans.TreeNode;
+import beans.TreeNode;
 
 /**
  * Created by doliu on 9/10/14.

@@ -46,4 +46,32 @@ public class ThreeSum {
 		}
 		return new ArrayList<>(result);
 	}
+
+	public ArrayList<ArrayList<Integer>> threeSumLint(int[] numbers) {
+		// write your code here
+		if (numbers == null || numbers.length < 3) return new ArrayList();
+		Arrays.sort(numbers);
+		Set<List<Integer>> result = new HashSet<>();
+		for (int i = 0; i < numbers.length - 2; i++) {
+			int j = i + 1, k = numbers.length - 1;
+			while (j < k) {
+				int sum = numbers[i] + numbers[j] + numbers[k];
+				if (sum == 0) {
+					result.add(Arrays.asList(numbers[i], numbers[j], numbers[k]));
+					j++;
+					k--;
+				} else if (sum < 0)
+					j++;
+				else
+					k--;
+			}
+		}
+		ArrayList<ArrayList<Integer>> r = new ArrayList<>();
+		for (List<Integer> l : result) {
+			ArrayList<Integer> temp = new ArrayList<>();
+			temp.addAll(l);
+			r.add(temp);
+		}
+		return r;
+	}
 }

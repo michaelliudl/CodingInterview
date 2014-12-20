@@ -1,4 +1,4 @@
-package com.careerup.crackingcodinginterview;
+package com.careercup.crackingcodinginterview;
 
 /**
  * Write a method to shuffle a deck of cards.
