@@ -3,6 +3,7 @@ package com.itint5.oj;
 /**
  * Created by doliu on 12/14/14.
  */
+// 下一个排列
 public class NextPermutation {
 	public boolean nextPermutation(int[] arr) {
 		if (arr == null || arr.length == 1) return false;

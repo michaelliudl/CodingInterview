@@ -5,7 +5,7 @@ package com.careercup.crackingcodinginterview;
  */
 public class Staircase9_1 {
 
-	// DB
+	// DP
 	public int countWaysDP(int n) {
 		if (n <= 0) return 0;
 		int[] cache = new int[n + 1];

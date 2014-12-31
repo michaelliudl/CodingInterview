@@ -5,6 +5,7 @@ import java.util.*;
 /**
  * Created by doliu on 12/13/14.
  */
+// 任务调度
 @Deprecated
 // not checking non-DAG
 public class JobScheduler {

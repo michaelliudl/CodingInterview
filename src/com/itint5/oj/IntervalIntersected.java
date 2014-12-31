@@ -10,13 +10,50 @@ import java.util.Map;
 /**
  * Created by doliu on 12/14/14.
  */
+// 区间相交
+@Deprecated
+// time out
 public class IntervalIntersected {
 
 	// intervals包含n个区间
 	// 结果存放到isIntersected中(已分配空间)
 	// isIntersected[i]表示第i个区间是否与其它区间相交
 
+	// sort, use hashmap to remember index, compare with largest end of previous intervals
 	public void intersected(Interval[] intervals, boolean[] isIntersected) {
+		if (intervals == null || isIntersected == null || intervals.length != isIntersected.length)
+			return;
+		if (intervals.length == 1) {
+			isIntersected[0] = false;
+			return;
+		}
+		Map<Interval, Integer> map = new HashMap<>();
+		for (int i = 0; i < intervals.length; i++) {
+			map.put(intervals[i], i);
+		}
+		Arrays.sort(intervals, new Comparator<Interval>() {
+			@Override
+			public int compare(Interval o1, Interval o2) {
+				return o1.start - o2.start;
+			}
+		});
+		int lastEnd = Integer.MIN_VALUE;
+		for (int i = 0; i < intervals.length; i++) {
+			if (i == 0) {
+				isIntersected[map.get(intervals[i])] = intervals[i].end >= intervals[i + 1].start;
+			} else if (i == intervals.length - 1) {
+				isIntersected[map.get(intervals[i])] = intervals[i].start <= lastEnd;
+			} else {
+				isIntersected[map.get(intervals[i])] =
+						intervals[i].start <= lastEnd || intervals[i].end >= intervals[i + 1].start;
+			}
+			lastEnd = Math.max(lastEnd, intervals[i].end);
+		}
+	}
+
+	// brute force, time out
+	@Deprecated
+	public void intersectedBrute(Interval[] intervals, boolean[] isIntersected) {
 		if (intervals == null || isIntersected == null || intervals.length != isIntersected.length)
 			return;
 		for (int i = 0; i < intervals.length; i++) {
@@ -43,37 +80,5 @@ public class IntervalIntersected {
 		if (interval1.start > interval2.start)
 			return intersected(interval2, interval1);
 		return interval2.start <= interval1.end;
-	}
-
-	@Deprecated
-	// NOT working
-	public void intersectedSort(Interval[] intervals, boolean[] isIntersected) {
-		if (intervals == null || isIntersected == null || intervals.length != isIntersected.length)
-			return;
-		if (intervals.length == 1) {
-			isIntersected[0] = false;
-			return;
-		}
-		Map<Interval, Integer> map = new HashMap<>();
-		for (int i = 0; i < intervals.length; i++) {
-			map.put(intervals[i], i);
-		}
-		Arrays.sort(intervals, new Comparator<Interval>() {
-			@Override
-			public int compare(Interval o1, Interval o2) {
-				return o1.start - o2.start;
-			}
-		});
-		for (int i = 0; i < intervals.length; i++) {
-			if (i == 0) {
-				isIntersected[map.get(intervals[i])] = intervals[i].end >= intervals[i + 1].start;
-			} else if (i == intervals.length - 1) {
-				isIntersected[map.get(intervals[i])]
-						= intervals[i].start <= intervals[i - 1].end;
-			} else {
-				isIntersected[map.get(intervals[i])] =
-						intervals[i].start <= intervals[i - 1].end || intervals[i].end >= intervals[i + 1].start;
-			}
-		}
 	}
 }

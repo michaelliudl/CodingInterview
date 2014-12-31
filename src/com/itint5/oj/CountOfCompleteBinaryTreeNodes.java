@@ -6,7 +6,11 @@ import util.TreeNodeUtil;
 /**
  * Created by doliu on 12/13/14.
  */
+// 统计完全二叉树结点数
 public class CountOfCompleteBinaryTreeNodes {
+	//使用TreeNodeUtil.getLeftChildNode(TreeNode)获得左儿子结点
+	//使用TreeNodeUtil.getRightChildNode(TreeNode)获得右儿子结点
+	//使用TreeNodeUtil.isNullNode(TreeNode)判断结点是否为空
 	public int countNodes(TreeNode root) {
 		if (TreeNodeUtil.isNullNode(root)) return 0;
 		int leftHeight = 0;

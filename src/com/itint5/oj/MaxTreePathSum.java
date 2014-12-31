@@ -7,6 +7,8 @@ import java.util.Arrays;
 /**
  * Created by doliu on 12/14/14.
  */
+// 树中最大路径和
+// 此题算法也可用来解决另一个非常常见的面试题“树的直径”（求树中任意两结点路径的长度的最大值）。可以认为树中每个结点的val值为1，那么求最长路径相当于求路径值最大的路径。
 public class MaxTreePathSum {
 
 	private int max = 0;

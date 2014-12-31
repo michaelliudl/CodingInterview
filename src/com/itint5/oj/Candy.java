@@ -3,6 +3,7 @@ package com.itint5.oj;
 /**
  * Created by doliu on 12/14/14.
  */
+// 分配糖果
 public class Candy {
 	//返回最少需要的糖果数
 	// leetcode solution
@@ -27,7 +28,7 @@ public class Candy {
 		return total;
 	}
 
-	// another solution
+	// scan from front and remember count, scan from end to update count
 	public long minimalCandies_1(int[] ratings) {
 		if (ratings == null) return 0;
 		if (ratings.length <= 1) return ratings.length;

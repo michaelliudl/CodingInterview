@@ -5,6 +5,7 @@ import beans.ListNode;
 /**
  * Created by doliu on 12/9/14.
  */
+// 链表排序
 public class LinkListSort {
 	public ListNode sort(ListNode head) {
 		if (head == null || head.next == null) return head;

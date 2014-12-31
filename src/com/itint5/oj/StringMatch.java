@@ -1,38 +1,46 @@
 package com.itint5.oj;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
+ * Create sorted list of substrings of lenth 10
+ * And binary search for prefix of query
+ *
  * Created by doliu on 12/14/14.
  */
-@Deprecated
-// timing out
+//  字符串匹配
 public class StringMatch {
 
-	private Map<Integer, Set<String>> map = new HashMap<>();
 	private static final int MAX = 10;
+
+	private List<String> substrings = new ArrayList<>();
 
 	// 预处理初始化
 	public void initWithString(String str) {
-		if (str == null || str.length() == 0)
+		if (str == null || str.isEmpty()) {
 			return;
-		int n = Math.max(MAX, str.length());
-		for (int i = 1; i <= n; i++) {
-			Set<String> strings = new HashSet<>();
-			for (int j = 0; j <= str.length() - i; j++) {
-				strings.add(str.substring(j, j + i));
-			}
-			map.put(i, strings);
 		}
+		for (int i = 0; i < str.length(); i++) {
+			substrings.add(str.substring(i, i + MAX > str.length() ? str.length() : i + MAX));
+		}
+		Collections.sort(substrings);
 	}
 
 	// 如果query是str的字串,返回true,否则返回false
 	public boolean existSubString(String query) {
-		if (query == null || query.length() == 0)
-			return false;
-		return map.get(query.length()).contains(query);
+		if (query == null || query.isEmpty()) return false;
+		int start = 0, end = substrings.size() - 1;
+		while (start <= end) {
+			if (start == end)
+				return substrings.get(start).startsWith(query);
+			int mid = (start + end) / 2;
+			if (substrings.get(mid).startsWith(query))
+				return true;
+			int comp = substrings.get(mid).compareTo(query);
+			if (comp == 0) return true;
+			else if (comp < 0) start = mid + 1;
+			else end = mid - 1;
+		}
+		return false;
 	}
 }
