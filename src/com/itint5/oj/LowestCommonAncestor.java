@@ -6,6 +6,7 @@ import beans.TreeNode;
  * Created by doliu on 12/9/14.
  * LCA
  */
+// 最近公共祖先
 public class LowestCommonAncestor {
 	public TreeNode getLCA(TreeNode node1, TreeNode node2) {
 		if (node1 == null || node2 == null) return null;

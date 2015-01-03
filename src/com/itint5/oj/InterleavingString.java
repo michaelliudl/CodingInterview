@@ -3,7 +3,7 @@ package com.itint5.oj;
 /**
  * Created by doliu on 12/28/14.
  */
-//
+// 交替字符串
 public class InterleavingString {
 	public boolean isInterleaving(String str1, String str2, String str3) {
 		if (str1 == null && str2 == null && str3 == null) return true;

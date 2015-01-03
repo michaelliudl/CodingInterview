@@ -11,18 +11,9 @@ import java.util.List;
  * Created by doliu on 12/22/14.
  */
 // 三数和为0
-/*
-存放a,b,c的三元组
-public class ABC {
-  public int a, b, c;
-  public ABC(int a, int b, int c) {
-    this.a=a;this.b=b;this.c=c;
-  }
-}
-*/
-
 public class ThreeSumZero {
-	//返回所有满足条件的(a,b,c)三元组
+	// 返回所有满足条件的(a,b,c)三元组
+	// 空间复杂度O(1)的算法(不使用任何辅助空间)，没必要利用set等数据结构消除重复的三元组
 	// check if arr[j] == arr[j - 1] or arr[k] == arr[k + 1] to detect duplicate triplets
 	public List<ABC> threeSumZero(int[] arr) {
 		if (arr == null || arr.length < 3) return Collections.emptyList();

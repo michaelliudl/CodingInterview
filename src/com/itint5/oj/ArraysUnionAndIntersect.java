@@ -4,7 +4,7 @@ package com.itint5.oj;
  * Created by doliu on 12/29/14.
  */
 // 两有序数组的交和并
-public class Arrays {
+public class ArraysUnionAndIntersect {
 	public int[] arrayUnion(int[] a, int[] b) {
 		if (a == null) a = new int[0];
 		if (b == null) b = new int[0];

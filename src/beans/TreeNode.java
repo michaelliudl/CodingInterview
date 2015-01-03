@@ -13,6 +13,8 @@ public class TreeNode {
 	public TreeNode parent;
 	// for tree max path sum problem, could have more than binary branches
 	public List<TreeNode> children;
+	// for threaded binary tree problem
+	public boolean isLeftThread, isRightThread;
 
 	public TreeNode(int x) { val = x; }
 

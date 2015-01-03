@@ -3,7 +3,9 @@ package com.itint5.oj;
 /**
  * Created by doliu on 12/29/14.
  */
+// 判断数独状态
 public class Sudoku {
+	// 直接在一维数组上操作，不要先将一维数组拷贝到9*9的二维数组
 	public boolean isValidSudoku(int[] arr) {
 		if (arr == null || arr.length != 81) return false;
 		for (int i = 0; i < arr.length; i += 9)

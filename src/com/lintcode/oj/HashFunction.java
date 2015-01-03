@@ -1,4 +1,4 @@
-package com.itint5.oj;
+package com.lintcode.oj;
 
 import java.math.BigInteger;
 

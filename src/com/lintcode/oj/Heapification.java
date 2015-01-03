@@ -1,4 +1,4 @@
-package com.itint5.oj;
+package com.lintcode.oj;
 
 /**
  * Created by doliu on 12/13/14.

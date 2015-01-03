@@ -5,6 +5,7 @@ import java.util.*;
 /**
  * Created by doliu on 12/20/14.
  */
+// 生成匹配的括号序列
 public class ParenthesesGenerator {
 	List<String> generate(int n) {
 		if (n <= 0) return Collections.emptyList();

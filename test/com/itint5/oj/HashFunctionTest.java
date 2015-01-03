@@ -1,5 +1,6 @@
 package com.itint5.oj;
 
+import com.lintcode.oj.HashFunction;
 import org.junit.Test;
 
 /**

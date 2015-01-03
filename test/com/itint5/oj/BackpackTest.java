@@ -1,5 +1,6 @@
 package com.itint5.oj;
 
+import com.lintcode.oj.Backpack;
 import org.junit.Assert;
 import org.junit.Test;
 

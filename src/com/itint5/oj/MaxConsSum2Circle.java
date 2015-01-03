@@ -1,14 +1,18 @@
 package com.itint5.oj;
 
 /**
- * Created by doliu on 12/13/14.
+ * Created by doliu on 12/27/14.
  */
-public class MaxSubArrayCircle {
+// 环形最大连续子段和
+public class MaxConsSum2Circle {
+
 	/**
-	1 = max sum not crossing arr[n-1] and arr[0], Kadane
-	2 = calculate min sum between arr[0] and arr[n - 1], max sum crossing = total - min sum
-	result = max(#1, #2)
+	 1 = max sum not crossing arr[n-1] and arr[0], Kadane
+	 2 = calculate min sum between arr[0] and arr[n - 1], max sum crossing = total - min sum
+	 result = max(#1, #2)
 	 */
+	// remember consecutive min sum and consecutive max sum
+	// compare consecutive max sum and (total - consecutive min sum)
 	public int maxConsSum2(int[] arr) {
 		if (arr == null || arr.length == 0) return 0;
 		if (arr.length == 1) return arr[0];
