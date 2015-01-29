@@ -31,4 +31,17 @@ public class LongestIncreasingSubsequence {
 			max = Math.max(max, lis[i]);
 		return max;
 	}
+
+	static class Shape<T> {
+		T data;
+		Shape(T data) {
+			this.data = data;
+		}
+	}
+
+	public static void main(String[] args) {
+		Shape s1 = new Shape("test");
+		Shape s2 = new Shape(100);
+		s1.data.equals(s2.data);
+	}
 }
